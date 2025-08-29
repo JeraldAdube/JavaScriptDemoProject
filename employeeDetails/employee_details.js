@@ -7,7 +7,7 @@ const employees = [
 
   // Function to display all employees
 function displayEmployees(){
-const totalEmployees = employees.map((employee, index) => `<p>${employee.id}: ${employee.name}: ${employee.name} - ${employee.department} - $${employee.salary} - $${employee.specialization}</p>`).join('');
+const totalEmployees = employees.map((employee, index) => `<p>${employee.id}: ${employee.name}: ${employee.name} - ${employee.department} - $${employee.salary} - ${employee.specialization}</p>`).join('');
 document.getElementById('employeesDetails').innerHTML = totalEmployees;
 }
 
@@ -18,14 +18,14 @@ function calculateTotalSalaries() {
 
 function displayHREmployees() {
     const hrEmployees = employees.filter(employee => employee.department === 'HR');
-     const hrEmployeesDisplay = hrEmployees.map((employee, index) => `<p>${employee.id}: ${employee.name}: ${employee.name} - ${employee.department} - $${employee.salary} - $${employee.specialization}</p>`).join('');
+     const hrEmployeesDisplay = hrEmployees.map((employee, index) => `<p>${employee.id}: ${employee.name}: ${employee.name} - ${employee.department} - $${employee.salary} - ${employee.specialization}</p>`).join('');
      document.getElementById('employeesDetails').innerHTML = hrEmployeesDisplay;
 }
 
 function findEmployeeById(employeeId) {
     const foundEmployee = employees.find(employee => employee.id === employeeId);
     if (foundEmployee) {
-    document.getElementById('employeesDetails').innerHTML =`<p>${foundEmployee.id}: ${foundEmployee.name}: ${foundEmployee.name} - ${foundEmployee.department} - $${foundEmployee.salary} - $${foundEmployee.specialization}</p>`;
+    document.getElementById('employeesDetails').innerHTML =`<p>${foundEmployee.id}: ${foundEmployee.name}: ${foundEmployee.name} - ${foundEmployee.department} - $${foundEmployee.salary} - ${foundEmployee.specialization}</p>`;
     }
     else{
       document.getElementById('employeesDetails').innerHTML = 'no employee has been found with this ID';
@@ -35,8 +35,8 @@ function findEmployeeById(employeeId) {
  function findEmployeeBySpecialization(specialization) {
     const javascriptEmployee = employees.find(employee => employee.specialization === 'JavaScript');
     if (javascriptEmployee) {
-        document.getElementById('employeeDetails').innerHTML =`<p>${javascriptEmployee.id}: ${javascriptEmployee.name}: ${javascriptEmployee.name} - ${javascriptEmployee.department} - $${javascriptEmployee.salary} - $${javascriptEmployee.specialization}</p>`;
+        document.getElementById('employeesDetails').innerHTML =`<p>${javascriptEmployee.id}: ${javascriptEmployee.name}: ${javascriptEmployee.name} - ${javascriptEmployee.department} - $${javascriptEmployee.salary} - ${javascriptEmployee.specialization}</p>`;
     } else {
-        document.getElementById('employeeDetails').innerHTML = 'no employee specializes in JavaScript ';
+        document.getElementById('employeeDsetails').innerHTML = 'no employee specializes in JavaScript ';
     }
  }
